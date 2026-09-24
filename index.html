@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김하늘 | 데이터로 일하는 신입 마케터</title>
+  <!-- 3회차 완성본 예시 (결석자·설치 실패자용). 이름·내용을 내 것으로 바꿔 쓰세요. -->
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, "Malgun Gothic", sans-serif; background: #f6efe4; color: #1f2a44; line-height: 1.6; }
+    main { max-width: 720px; margin: 0 auto; padding: 56px 20px; }
+    .hello { font-size: 14px; font-weight: 700; color: #d97757; letter-spacing: 0.04em; }
+    h1 { font-size: clamp(28px, 6vw, 40px); margin: 8px 0 4px; }
+    .lead { font-size: 18px; color: #475569; margin: 0 0 36px; }
+    h2 { font-size: 20px; margin: 40px 0 14px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+    .skills li { background: white; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card { background: white; border-radius: 14px; padding: 20px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: #475569; font-size: 15px; }
+    .contact { margin-top: 48px; text-align: center; }
+    .btn { display: inline-block; background: #d97757; color: white; text-decoration: none; font-weight: 700; padding: 14px 36px; border-radius: 999px; font-size: 17px; border: none; cursor: pointer; }
+    .copied { display: block; margin-top: 10px; font-size: 14px; color: #1e5a31; min-height: 1.4em; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="hello">HELLO</p>
+    <h1>안녕하세요, 김하늘입니다</h1>
+    <p class="lead">숫자 속에서 사람들이 좋아하는 이야기를 찾는, 데이터로 일하는 신입 마케터입니다.</p>
+
+    <h2>잘하는 것</h2>
+    <ul class="skills">
+      <li>SNS 콘텐츠 기획</li>
+      <li>엑셀 · 시트로 데이터 정리</li>
+      <li>사람들 앞에서 발표하기</li>
+    </ul>
+
+    <h2>해본 프로젝트</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>동아리 SNS 리뉴얼</h3>
+        <p>게시물 주제를 요일별로 정리해 6개월 만에 팔로워를 3배로 늘렸어요.</p>
+      </div>
+      <div class="card">
+        <h3>학과 행사 설문 분석</h3>
+        <p>설문 120건을 시트로 정리해, 다음 행사 시간대를 바꾸는 근거를 만들었어요.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <button class="btn" onclick="copyEmail()">연락하기 — 이메일 복사</button>
+      <span class="copied" id="copied"></span>
+    </div>
+  </main>
+  <script>
+    function copyEmail() {
+      const email = 'hello@example.com';
+      navigator.clipboard.writeText(email)
+        .then(function () { document.getElementById('copied').textContent = email + ' 주소를 복사했어요'; })
+        .catch(function () { document.getElementById('copied').textContent = email; });
+    }
+  </script>
+</body>
+</html>
